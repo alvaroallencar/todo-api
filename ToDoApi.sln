@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApi", "ToDoApi\ToDoApi.csproj", "{EF24E5F9-B513-4E86-93C0-9A86FF7ED9D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF24E5F9-B513-4E86-93C0-9A86FF7ED9D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF24E5F9-B513-4E86-93C0-9A86FF7ED9D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF24E5F9-B513-4E86-93C0-9A86FF7ED9D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF24E5F9-B513-4E86-93C0-9A86FF7ED9D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
