@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using ToDoApi.Contracts;
+using ToDoApi.Controllers.Dtos;
 
 namespace ToDoApi.Controllers;
 
@@ -8,15 +10,20 @@ public class ToDoController : ToDoBaseController
     [Route("{todoId:guid:required}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public IActionResult GetToDo([FromRoute] Guid todoId)
+    public async Task<IActionResult> GetToDo([FromRoute] Guid todoId, [FromServices] IGetToDoById getToDoById)
     {
-        return Ok();
+        var foundToDo = await getToDoById.Execute(todoId);
+
+        return Ok(foundToDo);
     }
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
-    public IActionResult CreateToDo()
+    public async Task<IActionResult> CreateToDo([FromBody] CreateToDoDto createToDoDto,
+        [FromServices] ICreateToDo createToDo)
     {
-        return Created(string.Empty, "");
+        var newToDo = await createToDo.Execute(createToDoDto);
+
+        return CreatedAtAction(nameof(GetToDo), new { todoId = newToDo?.Id }, newToDo);
     }
 }
