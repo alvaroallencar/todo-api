@@ -2,7 +2,7 @@ using ToDoApi.Entities;
 
 namespace ToDoApi.Controllers.Dtos;
 
-public class CreateToDoDto
+public record CreateToDoDto
 {
     public string Title { get; set; }
     public string Content { get; set; }
